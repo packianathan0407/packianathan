@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virat_Ice_Cream_Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .container,
+    .about-us .content-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 20px auto;
+      max-width: 1200px;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .text, .text-content {
+      max-width: 600px;
+    }
+
+    .text h1, .text-content h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .text-content h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #555;
+    }
+
+    .text-content p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .about-us img {
+      max-width: 400px;
+      height: auto;
+    }
+
+    .one {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensure it stays above other elements */
+    background-color: #4b0082; /* Optional: Add a background color for better visibility */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: white;
+    text-align: center;
+    padding: 20px; /* Optional: Add a subtle shadow for a polished look */    
+}
+    nav {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+
+    #search-bar {
+        margin-top: 10px;
+    }
+
+    .logo {
+        margin-right: 10px; /* Space between logo and text */
+    }
+
+    h1 {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 1.5rem; /* Adjust font size as needed */
+    }
+    
+
+    </style>
+</head>
+<body>
+    <header class="one">
+        <img src="images/viraticelogo.jpg" alt="Vitat_ice Logo" class="logo" width="50px" height="50px">
+        <h1>Virat Ice Cream Shop</h1>
+        <nav>
+            <a href="#about-us" class="about-us-btn">About Us</a>
+            <a href="cart.html">Shopping Cart</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="location.html">Location</a>
+        </nav>
+
+        <section id="search-bar">
+          <input type="text" id="search-input" placeholder="Search Ice Cream..." oninput="filterProducts()">
+      </section>
+        
+    </header>
+
+    <section class="about-us">
+        <div class="content-wrapper">
+          <img src="images/viratshop.jpg" alt="Ice Cream Shop" width="700px" height="400px">
+          <div class="text-content">
+            <h1>About Us</h1>
+            <h3>Our Journey</h3>
+           <p>
+    Welcome to <strong>Virat Ice Cream Shop</strong>, your ultimate destination for delightful frozen treats! 
+    Established with a passion for flavor and a commitment to quality, Virat Ice Cream Shop offers a wide variety of premium ice creams that bring joy to all ages. From classic favorites like Vanilla and Chocolate to exciting new creations like Mango Blast and Choco Lava, we have something to satisfy every craving.
+  </p>
+  <p>
+    At Virat Ice Cream Shop, we believe in using only the freshest ingredients to ensure a rich, creamy, and unforgettable taste in every scoop. Our mission is to deliver not just ice cream, but an experience filled with happiness, warmth, and deliciousness. Whether you're enjoying a cone on a sunny day or celebrating a special moment, we're here to make it extra sweet.
+  </p>
+  <p>
+    Thank you for choosing Virat Ice Cream Shop – where every bite is a reason to smile!
+  </p>
+          </div>
+        </div>
+      </section>
+     
+    <header>
+        <h1>Ice-creams</h1>
+    </header>
+
+    <section id="products">
+        <!-- Vanilla Cone -->
+        <div class="product" data-name="Vanilla Cone">
+            <img src="images/Vanilla_cone.jpg" alt="Vanilla Cone">
+            <h3>Vanilla Cone</h3>
+            <p>₹100</p>
+            <button onclick="addToCart({id: 1, name: 'Vanilla Cone', price: 100})">Add to Cart</button>
+            <p><strong>Ingredients:</strong> Milk, Sugar, Vanilla</p>
+        </div>
+        
+        
+
+        <!-- Chocolate Bar -->
+        <div class="product" data-name="Chocolate Bar">
+            <img src="images/Choco.jpg" alt="Chocolate Bar">
+            <h3>Chocolate Bar</h3>
+            <p>₹150</p>
+            <button onclick="addToCart({id: 2, name: 'Chocolate Bar', price: 150})">Add to Cart</button>
+            <p><strong>Ingredients:</strong> Cocoa, Sugar, Milk</p>
+        </div>
+
+        <!-- Strawberry Swirl -->
+        <div class="product" data-name="Strawberry Swirl">
+            <img src="images/Straw.jpg" alt="Strawberry Swirl">
+            <h3>Strawberry Swirl</h3>
+            <p>₹120</p>
+            <button onclick="addToCart({id: 3, name: 'Strawberry Swirl', price: 120})">Add to Cart</button>
+            <p><strong>Ingredients:</strong> Strawberries, Sugar, Cream</p>
+        </div>
+
+        <!-- Mango Magic -->
+        <div class="product" data-name="Mango Magic">
+            <img src="images/Mango.jpg" alt="Mango Magic">
+            <h3>Mango Magic</h3>
+            <p>₹140</p>
+            <button onclick="addToCart({id: 4, name: 'Mango Magic', price: 140})">Add to Cart</button>
+            <p><strong>Ingredients:</strong> Mango, Sugar, Cream</p>
+        </div>
+
+        <!-- Chocolate Fudge -->
+        <div class="product" data-name="Chocolate Fudge">
+            <img src="images/Choc_fudge.jpg" alt="Chocolate Fudge">
+            <h3>Chocolate Fudge</h3>
+            <p>₹160</p>
+            <button onclick="addToCart({id: 5, name: 'Chocolate Fudge', price: 160})">Add to Cart</button>
+            <p><strong>Ingredients:</strong> Cocoa, Fudge, Cream</p>
+        </div>
+
+        <!-- Butterscotch Delight -->
+        <div class="product" data-name="Butterscotch Delight">
+            <img src="images/Butter.jpg" alt="Butterscotch Delight">
+            <h3>Butterscotch Delight</h3>
+            <p>₹130</p>
+            <button onclick="addToCart({id: 6, name: 'Butterscotch Delight', price: 130})">Add to Cart</button>
+            <p><strong>Ingredients:</strong> Butterscotch, Cream, Sugar</p>
+        </div>
+
+        <!-- Pistachio Paradise -->
+        <div class="product" data-name="Pistachio Paradise">
+            <img src="images/pista.jpg" alt="Pistachio Paradise">
+            <h3>Pistachio Paradise</h3>
+            <p>₹180</p>
+            <button onclick="addToCart({id: 7, name: 'Pistachio Paradise', price: 180})">Add to Cart</button>
+            <p><strong>Ingredients:</strong> Pistachios, Cream, Sugar</p>
+        </div>
+
+        <!-- Cookies & Cream -->
+        <div class="product" data-name="Cookies & Cream">
+            <img src="images/cookies.jpg" alt="Cookies & Cream">
+            <h3>Cookies & Cream</h3>
+            <p>₹170</p>
+            <button onclick="addToCart({id: 8, name: 'Cookies & Cream', price: 170})">Add to Cart</button>
+            <p><strong>Ingredients:</strong> Cookies, Cream, Sugar</p>
+        </div>
+
+        <!-- Tiramisu Dream -->
+        <div class="product" data-name="Tiramisu Dream">
+            <img src="images/Tira.jpg" alt="Tiramisu Dream">
+            <h3>Tiramisu Dream</h3>
+            <p>₹200</p>
+            <button onclick="addToCart({id: 9, name: 'Tiramisu Dream', price: 200})">Add to Cart</button>
+            <p><strong>Ingredients:</strong> Coffee, Cream, Cocoa</p>
+        </div>
+
+        <!-- Banana Split -->
+        <div class="product" data-name="Banana Split">
+            <img src="images/banana.jpg" alt="Banana Split">
+            <h3>Banana Split</h3>
+            <p>₹150</p>
+            <button onclick="addToCart({id: 10, name: 'Banana Split', price: 150})">Add to Cart</button>
+            <p><strong>Ingredients:</strong> Banana, Chocolate, Vanilla, Cream</p>
+        </div>
+      </section>
+
+
+        <header>
+          <h1>Ice-cakes</h1>
+      </header>
+  
+      <section id="products">
+            <div class="product" data-name="BlueBerry Ice Cake">
+              <img src="images/blue.jpg" alt="BlueBerry Ice Cake">
+              <h3>BlueBerry </h3>
+              <p>₹500</p>
+              <button onclick="addToCart({id: 11, name: 'BlueBerry Ice Cake', price: 500})">Add to Cart</button>
+              <p><strong>Ingredients:</strong> Sugar, vanilla extract, butter, all-purpose flour, baking powder, eggs, milk, and fresh blueberries </p>
+          </div>
+
+          <div class="product" data-name="Chocolate Fudge Ice Cake">
+            <img src="images/choco_cake.jpg" alt="Chocolate Fudge Ice Cake">
+            <h3>Chocolate Fudge </h3>
+            <p>₹600</p>
+            <button onclick="addToCart({id: 12, name: 'Chocolate Fudge Ice Cake', price: 600})">Add to Cart</button>
+            <p><strong>Ingredients:</strong> Cocoa powder, sugar, butter, all-purpose flour, eggs, milk, and chocolate fudge</p>
+        </div>
+        
+        <div class="product" data-name="Strawberry Delight Ice Cake">
+            <img src="images/straw_c.jpg" alt="Strawberry Delight Ice Cake">
+            <h3>Strawberry Delight </h3>
+            <p>₹550</p>
+            <button onclick="addToCart({id: 13, name: 'Strawberry Delight Ice Cake', price: 550})">Add to Cart</button>
+            <p><strong>Ingredients:</strong> Sugar, butter, all-purpose flour, eggs, milk, fresh strawberries, and strawberry syrup</p>
+        </div>
+        
+        <div class="product" data-name="Mango Tango Ice Cake">
+            <img src="images/man_cake.jpg" alt="Mango Tango Ice Cake">
+            <h3>Mango Tango </h3>
+            <p>₹520</p>
+            <button onclick="addToCart({id: 14, name: 'Mango Tango Ice Cake', price: 520})">Add to Cart</button>
+            <p><strong>Ingredients:</strong> Sugar, butter, all-purpose flour, baking powder, eggs, milk, and fresh mango puree</p>
+        </div>
+
+        <div class="product" data-name="Blackcurrant Bliss Ice Cake">
+          <img src="images/black.jpg" alt="Blackcurrant Bliss Ice Cake">
+          <h3>Blackcurrant Bliss </h3>
+          <p>₹580</p>
+          <button onclick="addToCart({id: 15, name: 'Blackcurrant Bliss Ice Cake', price: 580})">Add to Cart</button>
+          <p><strong>Ingredients:</strong> Sugar, butter, all-purpose flour, eggs, milk, blackcurrant puree, and fresh blackcurrants</p>
+      </div>
+    </section>
+      
+      <header>
+        <h1>Deserts</h1>
+      </header>
+
+      <section id="products">
+        
+        <div class="product" data-name="Chocolate Brownie Sundae">
+          <img src="images/sundae.jpg" alt="Chocolate Brownie Sundae">
+          <h3>Chocolate Brownie </h3>
+          <p>₹300</p>
+          <button onclick="addToCart({id: 16, name: 'Chocolate Brownie Sundae', price: 300})">Add to Cart</button>
+          <p><strong>Ingredients:</strong> Brownie pieces, vanilla ice cream, chocolate syrup, whipped cream, and sprinkles</p>
+      </div>
+      
+      <div class="product" data-name="Vanilla Cheesecake">
+          <img src="images/cheese.jpg" alt="Vanilla Cheesecake">
+          <h3>Vanilla Cheesecake</h3>
+          <p>₹450</p>
+          <button onclick="addToCart({id: 17, name: 'Vanilla Cheesecake', price: 450})">Add to Cart</button>
+          <p><strong>Ingredients:</strong> Cream cheese, vanilla extract, sugar, graham cracker crust, and eggs</p>
+      </div>
+      
+      <div class="product" data-name="Death by Chocolate">
+          <img src="images/dbc.jpg" alt="Death by Chocolate">
+          <h3>Death by Chocolate</h3>
+          <p>₹550</p>
+          <button onclick="addToCart({id: 18, name: 'Death by Chocolate', price: 550})">Add to Cart</button>
+          <p><strong>Ingredients:</strong>Chocolate cake, chocolate mousse, chocolate ganache, chocolate shavings</p>
+      </div>
+      
+      <div class="product" data-name="Red Velvet Cupcake">
+          <img src="images/cup.jpg" alt="Red Velvet Cupcake">
+          <h3>Red Velvet Cupcake</h3>
+          <p>₹120</p>
+          <button onclick="addToCart({id: 19, name: 'Red Velvet Cupcake', price: 120})">Add to Cart</button>
+          <p><strong>Ingredients:</strong> All-purpose flour, cocoa powder, sugar, butter, eggs, and cream cheese frosting</p>
+      </div>
+      
+      <div class="product" data-name="Tiramisu">
+          <img src="images/tiram.jpg" alt="Tiramisu">
+          <h3>Tiramisu</h3>
+          <p>₹500</p>
+          <button onclick="addToCart({id: 20, name: 'Tiramisu', price: 500})">Add to Cart</button>
+          <p><strong>Ingredients:</strong> Mascarpone cheese, espresso, ladyfingers, cocoa powder, sugar, and whipped cream</p>
+      </div>
+      
+      </section>
+
+      <header>
+        <h1>Milk Shakes</h1>
+      </header>
+
+        <section id="products">
+          <div class="product" data-name="Chocolate Milkshake">
+            <img src="images/mil1.jpg" alt="Chocolate Milkshake">
+            <h3>Chocolate Milkshake</h3>
+            <p>₹180</p>
+            <button onclick="addToCart({id: 21, name: 'Chocolate Milkshake', price: 180})">Add to Cart</button>
+            <p><strong>Ingredients:</strong> Milk, chocolate, cocoa powder, sugar, and whipped cream</p>
+        </div>
+        
+        <div class="product" data-name="Strawberry Milkshake">
+            <img src="images/mil2.jpg" alt="Strawberry Milkshake">
+            <h3>Strawberry Milkshake</h3>
+            <p>₹170</p>
+            <button onclick="addToCart({id: 22, name: 'Strawberry Milkshake', price: 170})">Add to Cart</button>
+            <p><strong>Ingredients:</strong> Milk, strawberry ice cream, fresh strawberries, and sugar</p>
+        </div>
+        
+        <div class="product" data-name="Vanilla Milkshake">
+            <img src="images/mil3.jpg" alt="Vanilla Milkshake">
+            <h3>Vanilla Milkshake</h3>
+            <p>₹150</p>
+            <button onclick="addToCart({id: 23, name: 'Vanilla Milkshake', price: 150})">Add to Cart</button>
+            <p><strong>Ingredients:</strong> Milk, vanilla ice cream, sugar, and a dash of vanilla extract</p>
+        </div>
+        
+        <div class="product" data-name="Mango Milkshake">
+            <img src="images/mil4.jpg" alt="Mango Milkshake">
+            <h3>Mango Milkshake</h3>
+            <p>₹200</p>
+            <button onclick="addToCart({id: 24, name: 'Mango Milkshake', price: 200})">Add to Cart</button>
+            <p><strong>Ingredients:</strong> Milk, mango ice cream, fresh mango puree, and sugar</p>
+        </div>
+        
+        <div class="product" data-name="Oreo Milkshake">
+            <img src="images/mil5.jpg" alt="Oreo Milkshake">
+            <h3>Oreo Milkshake</h3>
+            <p>₹220</p>
+            <button onclick="addToCart({id: 25, name: 'Oreo Milkshake', price: 220})">Add to Cart</button>
+            <p><strong>Ingredients:</strong> Milk, vanilla ice cream, Oreo cookies, and chocolate syrup</p>
+        </div>
+        
+        </section>
+
+        <header>
+          <h1>Waffles</h1>
+        </header>
+
+        <section class="products">
+          <div class="product" data-name="Classic Waffle">
+            <img src="images/waf1.jpg" alt="Classic Waffle">
+            <h3>Classic Waffle</h3>
+            <p>₹150</p>
+            <button onclick="addToCart({id: 26, name: 'Classic Waffle', price: 150})">Add to Cart</button>
+            <p><strong>Ingredients:</strong> All-purpose flour, sugar, butter, eggs, milk, and vanilla extract</p>
+        </div>
+        
+        <div class="product" data-name="Chocolate Waffle">
+            <img src="images/waf2.jpg" alt="Chocolate Waffle">
+            <h3>Chocolate Waffle</h3>
+            <p>₹180</p>
+            <button onclick="addToCart({id: 27, name: 'Chocolate Waffle', price: 180})">Add to Cart</button>
+            <p><strong>Ingredients:</strong> All-purpose flour, cocoa powder, sugar, butter, eggs, and milk</p>
+        </div>
+        
+        <div class="product" data-name="Strawberry Waffle">
+            <img src="images/waf3.jpg" alt="Strawberry Waffle">
+            <h3>Strawberry Waffle</h3>
+            <p>₹200</p>
+            <button onclick="addToCart({id: 28, name: 'Strawberry Waffle', price: 200})">Add to Cart</button>
+            <p><strong>Ingredients:</strong>Flour, sugar, butter, eggs, milk, fresh strawberries, and syrup</p>
+        </div>
+        
+        <div class="product" data-name="Nutella Waffle">
+            <img src="images/waf4.jpg" alt="Nutella Waffle">
+            <h3>Nutella Waffle</h3>
+            <p>₹220</p>
+            <button onclick="addToCart({id: 29, name: 'Nutella Waffle', price: 220})">Add to Cart</button>
+            <p><strong>Ingredients:</strong>Flour, sugar, butter, eggs, milk, and a generous spread of Nutella</p>
+        </div>
+        
+        <div class="product" data-name="Banana Caramel Waffle">
+            <img src="images/waf5.jpg" alt="Banana Caramel Waffle">
+            <h3>Banana Waffle</h3>
+            <p>₹250</p>
+            <button onclick="addToCart({id: 30, name: 'Banana Caramel Waffle', price: 250})">Add to Cart</button>
+            <p><strong>Ingredients:</strong>Flour, sugar, butter, eggs, milk, banana slices, and caramel sauce</p>
+        </div>
+        
+        </section>
+   
+
+    
+
+    <!-- Cart Section -->
+    
+    <script src="script.js"></script> <!-- Link to JavaScript file -->
+</body>
+</html>

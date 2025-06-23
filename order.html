@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - Virat Ice-Cream Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <img src="images/logo.png" alt="MeLAAn Sundaes Logo" class="logo">
+        <h1>virat_ice</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="cart.html">Shopping Cart</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Order Confirmation Section -->
+    <section id="order-confirmation">
+        <h2>Order Confirmation</h2>
+        <p>Thank you for your order! Here are the details:</p>
+
+        <h3>Order Summary:</h3>
+        <ul id="order-summary">
+            <!-- Order items will be displayed here -->
+        </ul>
+        
+        <p><strong>Total Price:</strong> ₹<span id="total-price">0</span></p>
+        <p>Your order has been placed successfully and will be processed shortly.</p>
+    </section>
+
+    <script>
+        // Fetch the order details from localStorage (or your backend)
+        document.addEventListener("DOMContentLoaded", function() {
+            const orderSummary = document.getElementById('order-summary');
+            const totalPriceElement = document.getElementById('total-price');
+            
+            // Assuming order details are stored in localStorage (can be retrieved from backend if needed)
+            const orderDetails = JSON.parse(localStorage.getItem('orderDetails'));
+
+            if (orderDetails) {
+                // Loop through each item and display it
+                let totalPrice = 0;
+                orderDetails.items.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = `${item.name} - ₹${item.price}`;
+                    orderSummary.appendChild(li);
+                    totalPrice += item.price;
+                });
+
+                // Update the total price
+                totalPriceElement.textContent = totalPrice;
+            } else {
+                orderSummary.innerHTML = '<p>No order details found. Please try again.</p>';
+            }
+        });
+    </script>
+</body>
+</html>

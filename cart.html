@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    body {
+    background-image: url(images/back.jpg);
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-position: center center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repeating the image */
+    height: 100vh; /* Ensures the body takes up the full viewport height */
+    margin: 0; /* Removes default margin */
+}
+
+</style>
+<body>
+<center>
+    <header>
+        <h1>Welcome to Virat_Ice_Cream_Shop!</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="cart.html">Shopping Cart</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <section id="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-list">
+            <!-- Cart items will be displayed here -->
+        </ul>
+        <p>Total Price: ₹<span id="total-price">0</span></p>
+        <button onclick="order()">Order now</button>
+    </section>
+    <section>
+        <button onclick="clearCart()">Clear Cart</button>
+    </section>
+
+    <script src="script.js"></script>
+</center>
+</body>
+</html>
